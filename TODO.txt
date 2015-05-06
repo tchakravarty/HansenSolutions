@@ -1,0 +1,13 @@
+TODO:
+====
+1. Create the question and the answer environments. These environments are created using \newenvironment but should these be
+ created using ntheorem or amsthm's theorem environments?
+
+2. How to get Kile to compile the entire project from any doument in the project? Turns out that Alt + 6 will work, but you have to 
+explicitly add the file to the project.
+
+3. Add the package that ensures that equations are only numbered if they are referred to in the body of the text. 
+
+4. Add fancy headers and footers to the document. 
+
+5. How can you center a tabular environment without nesting it within a float environment. 

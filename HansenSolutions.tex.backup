@@ -1,0 +1,13 @@
+\documentclass{report}
+\include{Preamble}
+\title{Solutions to \emph{Bruce Hansen's Econometrics}}
+\author{Tirthankar Chakravarty}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\include{Chapter2}
+\end{document}
+
+

@@ -1,0 +1,26 @@
+%==============================================================================
+% purpose: custom functions for the Hansen Solutions project
+% author: tirthankar chakravarty
+% created: 1st may 2015
+% revised:
+% comments:
+% 1. Is it necessary to set the value of the counter to one? What is the default value?
+% 2. Is it necessary to increment the counter in the environment definition? Yes, apprarently
+% 	the management of the counter has to be done by the user. 
+% 3. Why does the problem environment indent itself?
+%==============================================================================
+\usepackage{vhistory}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{autonum}
+\usepackage{paralist}
+
+
+% create the question and answer environment
+\newcounter{problemcount}
+\setcounter{problemcount}{1}
+\newenvironment{problem}{\noindent\textbf{Problem }\arabic{problemcount}\textbf{:}\stepcounter{problemcount}}{} 
+\newenvironment{solution}{\noindent\textbf{Solution:}}{}
+
+

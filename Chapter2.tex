@@ -1,0 +1,106 @@
+\chapter{Conditional Expectations and Projections}
+
+%======================================
+% problem 1
+%======================================
+\begin{problem}
+Find $\E{\E{\E{Y \mid X_1, X_2, X_3}\mid X_1, X_2} \mid X_1}$. 
+\end{problem}
+
+\begin{solution}
+By the law of iterated expectations:
+\begin{align}
+ \E{\E{Y \mid X_1, X_2, X_3}\mid X_1, X_2} &= \E{Y \mid X_1, X_2} \\
+ \intertext{and}
+ \E{\E{Y \mid X_1, X_2} \mid X_1} &= \E{Y \mid X_1}
+\end{align}
+\end{solution}
+
+
+%======================================
+% problem 2
+%======================================
+\begin{problem}
+If $\E{Y \mid X} = a + bX$, find $\E{YX}$ in terms of the moments of $X$.  
+\end{problem}
+
+\begin{solution}
+ We know that:
+ \begin{align}
+  \E{YX} &= \E{\E{Y \mid X}X}\tag*{by LIE}\\
+  &= \E{aX + bX^2} \\
+  &= a\mu_X + b(\sigma^2_X - \mu_X^2)
+ \end{align}
+\end{solution}
+
+
+%======================================
+% problem 3
+%======================================
+\begin{problem}
+Prove Theorem 2.8.1.4 (Properties of the CEF error). If $\E{\abs{Y}} < \infty$, then for any function $h(\vect{X})$ such that $\E{\abs{h(\vect{X})\varepsilon}} < \infty$, $\E{h(\vect{X})\varepsilon} = 0$. 
+\end{problem}
+
+\begin{solution}
+ Since $\E{\abs{h(\vect{X})\varepsilon}} < \infty$, $h(\vect{X})\varepsilon$ is integrable, and by the conditioning theorem, 
+ \begin{align}
+  \E{h(\vect{X})\varepsilon} &= \E{h(\vect{X})\E{\varepsilon\mid \vect{X}}}\\
+  \intertext{but by the mean independence of the errors, $\E{\varepsilon\mid \vect{X}} = 0$, so}
+  &= 0
+ \end{align}
+\end{solution}
+
+%======================================
+% problem 4
+%======================================
+\begin{problem}
+ Suppose that $X, Y \in \left\{0, 1\right\}$ and the joint PDF is
+ 
+ {
+  \centering
+  \begin{tabular}{>{$}l<{$} | >{$}l<{$}  >{$}l<{$}}
+  & X = 0 & X = 1 \\
+  \hline
+    Y = 0 & 0.1 & 0.2 \\
+    Y = 1 & 0.4 & 0.3
+  \end{tabular}
+ }  
+\newline
+ Find $\E{Y \mid X}$, $\E{Y^2 \mid X}$, $\V{Y \mid X}$ for $X  = 0$ and $X = 1$.
+\end{problem}
+
+\begin{solution}
+ \begin{align}
+  \E{Y \mid X = 0} &= 0\times 0.1 + 1\times 0.4 \\
+  &= 0.4 \\
+  &= \E{Y^2 \mid X = 0} \\
+  \E{Y \mid X = 1} &= 0\times 0.2 + 1\times 0.3 \\
+  &= 0.3 \\
+  &= \E{Y^2 \mid X = 1} \\
+  \V{Y \mid X = 0} &= \E{Y^2 \mid X = 0} - \paran{\E{Y \mid X = 0}}^2 \\
+  &= 0.24 \\
+   \V{Y \mid X = 1} &= \E{Y^2 \mid X = 1} - \paran{\E{Y \mid X = 1}}^2 \\
+  &= 0.21
+\end{align}
+
+\end{solution}
+
+%======================================
+% problem 5
+%======================================
+\begin{problem}
+ Show that $\sigma^2(\vect{X})$ is the best predictor of $\varepsilon^2$ given $\vect{X}$:
+ \begin{compactitem}
+  \item Write down the MSE of a predictor $h(\vect{X})$ for $\varepsilon^2$.
+  \item What does it mean to be predicting $\varepsilon^2$?
+  \item Show that $\sigma^2(\vect{X})$ minimizes the MSE and is thus the best prediction. 
+ \end{compactitem}
+\end{problem}
+
+\begin{solution}
+ The MSE of any function $h$ for $\varepsilon^2$ is 
+ $$
+ \E{\varepsilon^2 - h(\vect{X})}^2
+ $$
+ We say we are predicting $\varepsilon^2$ if we are attempting to estimate its value given the information in the observables $\vect{X}$, using the function estimate of $h$.
+\end{solution}
